@@ -1,0 +1,5 @@
+﻿I got the pirate sprite from https://opengameart.org/content/classic-pirate-captain-animated
+
+I got the coin sprite from https://opengameart.org/content/coins-pixel-art-silver-gold-crystal-and-more
+
+I also used the spritefont from our tutorial.
