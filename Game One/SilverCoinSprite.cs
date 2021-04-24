@@ -11,20 +11,20 @@ namespace Game_One
 {
     public class SilverCoinSprite
     {
-        private Vector2 position;
+        public Vector2 position { get; set; }
 
         private Texture2D texture;
 
-        private BoundingRectangle bounds;
+        private BoundingCircle bounds;
 
-        public BoundingRectangle Bounds => bounds;
+        public BoundingCircle Bounds => bounds;
 
         public bool Collected { get; set; } = false;
 
         public SilverCoinSprite(Vector2 position)
         {
             this.position = position;
-            this.bounds = new BoundingRectangle(position, 24, 24);
+            this.bounds = new BoundingCircle(position + new Vector2(64, 64), 11);
         }
 
         public void LoadContent(ContentManager content)
@@ -36,7 +36,8 @@ namespace Game_One
         {
             if (Collected) return;
             var source = new Rectangle(0, 0, 64, 64);
-            spriteBatch.Draw(texture, position, source, Color.White);
+            spriteBatch.Draw(texture, position, source, Color.White, 0, new Vector2(0, 0), 2f, SpriteEffects.None, 0);
+            //spriteBatch.Draw(texture, position, null, Color.White);
         }
     }
 }

@@ -20,9 +20,15 @@ namespace Game_One
 
         private bool flipped;
 
-        private BoundingRectangle bounds = new BoundingRectangle(new Vector2(200 - 10, 200 - 8), 20, 15);
+        private BoundingCircle bounds;
 
-        public BoundingRectangle Bounds => bounds;
+        public BoundingCircle Bounds => bounds;
+
+        public PirateSprite(Vector2 position)
+        {
+            this.position = position;
+            this.bounds = new BoundingCircle(position + new Vector2(40, 30), 20);
+        }
 
         public Color Color { get; set; } = Color.White;
 
@@ -53,14 +59,13 @@ namespace Game_One
                 position += new Vector2(1 * count, 0);
                 flipped = false;
             }
-            bounds.X = position.X - 10;
-            bounds.Y = position.Y - 8;
+            bounds.Center = new Vector2(position.X + 40, position.Y + 30);
         }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             SpriteEffects spriteEffects = (flipped) ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
-            spriteBatch.Draw(texture, position, null, Color, 0, new Vector2(20, 15), 1f, spriteEffects, 0);
+            spriteBatch.Draw(texture, position, null, Color, 0, new Vector2(0, 0), 2f, spriteEffects, 0);
         }
     }
 }

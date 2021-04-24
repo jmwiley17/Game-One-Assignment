@@ -3,3 +3,7 @@
 I got the coin sprite from https://opengameart.org/content/coins-pixel-art-silver-gold-crystal-and-more
 
 I also used the spritefont from our tutorial.
+
+I used the ball sprite from one of the tutorials to check my bounds
+
+I made the coin pickup sound with BFXR
